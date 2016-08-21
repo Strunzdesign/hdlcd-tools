@@ -1,6 +1,6 @@
 var NAVTREE =
 [
-  [ "HDLC-Daemon", "index.html", [
+  [ "HDLCd-Tools", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
