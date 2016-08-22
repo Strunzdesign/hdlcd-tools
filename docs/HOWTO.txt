@@ -1,0 +1,17 @@
+This file gives some examples how to use the collection of tools to be used together with the HDLCd:
+---
+Most of these tools require three arguments, some four:
+1.) The IP address of the host with the HDLCd entity running,
+2.) the TCP port number of the respective HDLCd entity,
+3.) a device string that indicated which serial port has to be opened.
+4.) Some tools allow a forth parameter to provide hex numbers describing payload.
+
+Example (GNU/Linux):
+
+cd build/src/tools/hdlcd-dissector
+./hdlcd-dissector 127.0.0.1 10000 /dev/ttyUSB0
+
+Example (Microsoft Windows):
+
+cd build\src\tools\hdlcd-dissector
+hdlcd-dissector.exe 127.0.0.1 10000 "//./COM1"
