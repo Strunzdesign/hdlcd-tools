@@ -4,7 +4,7 @@ hdlcd-dissector
 ---
 Usage:       hdlcd-dissector <HDLCd IP addtess> <HDLCd TCP port> <Device>
 Description: Prints out all HDLC frames sent to and received from the specified device in
-             human-readble form.
+             human-readable form.
 
 
 
