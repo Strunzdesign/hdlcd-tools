@@ -29,7 +29,7 @@ Preparations:
 - Follow the HDLCd installation guide from file INSTALL.
 - Following that guide assures that your toolchain is complete.
 
-To compile the HDLC daemon and to install it along with the header files, just follow these steps:
+To compile and install the HDLC daemon tools, just follow these steps:
 1.) Go to your projects' folder and open a shell there
 2.) git clone https://github.com/Strunzdesign/hdlcd-tools.git
 3.) cd hdlcd-tools
