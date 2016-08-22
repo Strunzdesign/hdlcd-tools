@@ -74,7 +74,7 @@ hdlcd-portkiller
 ---
 Usage:       hdlcd-portkill <HDLCd IP addtess> <HDLCd TCP port> <Device>
 Description: Instantly kill the serial port handler of the specified device within the HDLC Daemon.
-             All related clients of the HDLC Daemon will terminate.
+             All related clients of the HDLC Daemon will be detached.
 
 
 
