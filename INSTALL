@@ -1,0 +1,47 @@
+===
+How to install the additional tools for the HDLC Daemon
+===
+
+For GNU/Linux:
+---
+Preparations:
+- First install the HDLC Daemon from https://github.com/Strunzdesign/hdlcd.
+- Follow the HDLCd installation guide from file INSTALL.
+- Following that guide assures that your toolchain is complete.
+
+To compile the HDLC daemon tools, just follow these steps:
+1.) git clone https://github.com/Strunzdesign/hdlcd-tools.git
+2.) cd hdlcd-tools
+3.) mkdir build
+4.) cd build
+5.) cmake ..
+6.) make
+7.) make install (as root)
+
+All binaries will be installed to "/usr/local/bin/".
+
+
+
+For Microsoft Windows 7:
+---
+Preparations:
+- First install the HDLC Daemon from https://github.com/Strunzdesign/hdlcd.
+- Follow the HDLCd installation guide from file INSTALL.
+- Following that guide assures that your toolchain is complete.
+
+To compile the HDLC daemon and to install it along with the header files, just follow these steps:
+1.) Go to your projects' folder and open a shell there
+2.) git clone https://github.com/Strunzdesign/hdlcd-tools.git
+3.) cd hdlcd-tools
+4.) mkdir build
+5.) cd build
+6.) Pick yourself a directory to install the compiled files, e.g., consider C:\hdlcd-tools
+7.) Remember the directory where you installed the HDLC Daemon, e.g., C:\hdlcd
+8.) cmake -G "MinGW Makefiles" -DCMAKE_INSTALL_PREFIX=/c/hdlcd-tools -DHDLCD_INCLUDE_DIR=/c/hdlcd/include ..
+9.) If you get an error message on step 8, repeat step 9 once
+10.) make
+11.) make install
+
+The "hdlcd-tools" binaries will be installed to "C:\hdlcd-tools\bin\".
+
+Have fun :-)
