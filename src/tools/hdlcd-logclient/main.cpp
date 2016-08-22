@@ -19,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "Config.h"
 #include <iostream>
 #include <boost/asio.hpp>
 #include "HdlcdAccessClient.h"
@@ -26,7 +27,7 @@
 
 int main(int argc, char* argv[]) {
     try {
-        std::cerr << "HDLCd Logclient to dump incoming payload packets together with UTC arrival time\n";
+        std::cerr << "HDLCd Logclient to dump incoming payload packets together with UTC arrival time v" << HDLCD_TOOLS_VERSION_MAJOR << "." << HDLCD_TOOLS_VERSION_MINOR << std::endl;
         if (argc != 4) {
             std::cerr << "Usage: hdlcd-logclient <host> <port> <usb-device>\n";
             return 1;

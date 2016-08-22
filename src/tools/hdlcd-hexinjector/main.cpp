@@ -19,6 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "Config.h"
 #include <iostream>
 #include <vector>
 #include <boost/asio.hpp>
@@ -26,7 +27,7 @@
 
 int main(int argc, char* argv[]) {
     try {
-        std::cerr << "HDLCd payload injector (single packet as hexdump via command line)\n";
+        std::cerr << "HDLCd payload injector (single packet as hexdump via command line) v" << HDLCD_TOOLS_VERSION_MAJOR << "." << HDLCD_TOOLS_VERSION_MINOR << std::endl;
         if (argc != 5) {
             std::cerr << "Usage: hdlcd-hexinjector <host> <port> <usb-device> \"HEXDUMP\"\n";
             return 1;
