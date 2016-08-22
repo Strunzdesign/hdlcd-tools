@@ -2,7 +2,7 @@
  * \file main.cpp
  * \brief 
  *
- * The hdlc-tools implement the HDLC protocol to easily talk to devices connected via serial communications
+ * Additional tools to be used together with the HDLC Daemon.
  * Copyright (C) 2016  Florian Evers, florian-evers@gmx.de
  *
  * This program is free software: you can redistribute it and/or modify
