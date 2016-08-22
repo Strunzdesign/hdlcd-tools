@@ -13,7 +13,7 @@ Releases of the HDLCd-Tools:
 - none yet
 
 Current state:
-- testing
+- Works well with s-net(r) BASE release 3.6
 
 Required libraries and tools:
 - GCC, the only tested compiler collection thus far (tested: GCC 4.9.3, GCC 6.1)
