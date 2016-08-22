@@ -73,8 +73,8 @@ Description: NOT READY YET! Planned to be an adaptor to feed HDLC payload to Wir
 hdlcd-portkiller
 ---
 Usage:       hdlcd-portkill <HDLCd IP addtess> <HDLCd TCP port> <Device>
-Description: Instantly kill all serialport handlers regarding the specified device. All related
-             clients of the HDLC Daemon will terminate.
+Description: Instantly kill the serial port handler of the specified device within the HDLC Daemon.
+             All related clients of the HDLC Daemon will terminate.
 
 
 
