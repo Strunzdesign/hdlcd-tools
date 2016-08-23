@@ -2,7 +2,7 @@ This repository contains multiple tools to be used together with the HDLC Daemon
 
 hdlcd-dissector
 ---
-Usage:       hdlcd-dissector <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-dissector <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Prints out all HDLC frames sent to and received from the specified device in
              human-readable form.
 
@@ -10,7 +10,7 @@ Description: Prints out all HDLC frames sent to and received from the specified 
 
 hdlcd-hexchanger
 ---
-Usage:       hdlcd-hexchanger <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-hexchanger <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Interactive application to read incoming payload as hex output while
              allowing to drop hex input for transmission to the specified device.
              Not available on Microsoft Windows!
@@ -19,7 +19,7 @@ Description: Interactive application to read incoming payload as hex output whil
 
 hdlcd-hexdump
 ---
-Usage:       hdlcd-hexdump <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-hexdump <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Prints out all HDLC frames sent to and received from the specified device as
              hex dump.
              
@@ -27,7 +27,7 @@ Description: Prints out all HDLC frames sent to and received from the specified 
 
 hdlcd-hexdump-payload
 ---
-Usage:       hdlcd-hexdump-payload <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-hexdump-payload <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Prints out all payload of HDLC frames sent to and received from the specified
              device as hex dump.
 
@@ -35,14 +35,14 @@ Description: Prints out all payload of HDLC frames sent to and received from the
 
 hdlcd-hexinjector
 ---
-Usage:       hdlcd-hexinjector <HDLCd IP addtess> <HDLCd TCP port> <Device> <"HEXDUMP">
+Usage:       hdlcd-hexinjector <HDLCd IP address> <HDLCd TCP port> <Device> <"HEXDUMP">
 Description: Sends hex dump payload to specified device and terminates.
 
 
 
 hdlcd-logclient
 ---
-Usage:       hdlcd-logclient <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-logclient <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Prints out all payload of HDLC frames received from the specified device as hex dump
              together with a UTC timestamp.
 
@@ -50,7 +50,7 @@ Description: Prints out all payload of HDLC frames received from the specified d
              
 hdlcd-monitor
 ---
-Usage:       hdlcd-monitor <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-monitor <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Prints all status changes regarding the specified device, e.g., regarding
              the alive state or whether the device is currently locked or not.
 
@@ -58,21 +58,21 @@ Description: Prints all status changes regarding the specified device, e.g., reg
 
 hdlcd-pcapstreamer
 ---
-Usage:       hdlcd-pcapstreamer-hdlc <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-pcapstreamer-hdlc <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: NOT READY YET! Planned to be an adaptor to feed HDLC frames to Wireshark.
 
 
 
 hdlcd-pcapstreamer-payload
 ---
-Usage:       hdlcd-pcapstreamer-payload <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-pcapstreamer-payload <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: NOT READY YET! Planned to be an adaptor to feed HDLC payload to Wireshark.
 
 
 
 hdlcd-portkiller
 ---
-Usage:       hdlcd-portkill <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-portkill <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Instantly kill the serial port handler of the specified device within the HDLC Daemon.
              All related clients of the HDLC Daemon will be detached.
 
@@ -80,6 +80,6 @@ Description: Instantly kill the serial port handler of the specified device with
 
 hdlcd-suspender
 ---
-Usage:       hdlcd-suspender <HDLCd IP addtess> <HDLCd TCP port> <Device>
+Usage:       hdlcd-suspender <HDLCd IP address> <HDLCd TCP port> <Device>
 Description: Acquire a lock on the specified device. The lock is held as long as the application
              is running. Kill it with SIGINT (STRG-C) to release the lock.
