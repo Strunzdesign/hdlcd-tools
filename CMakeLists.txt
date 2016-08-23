@@ -22,4 +22,11 @@ configure_file (
     "${PROJECT_BINARY_DIR}/src/Config.h"
 )
 
+# Add include path for Microsoft Windows
+set(HDLCD_INCLUDE_DIR "/usr/local/include" CACHE FILEPATH "/usr/local/include")
+if (NOT EXISTS ${HDLCD_INCLUDE_DIR}/HdlcdPacket.h)
+    message(SEND_ERROR "Can't find the HDLC Daemon header files in ${HDLCD_INCLUDE_DIR}")
+endif()
+include_directories(${HDLCD_INCLUDE_DIR})
+
 add_subdirectory(src)
