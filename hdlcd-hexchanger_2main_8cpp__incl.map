@@ -1,4 +1,4 @@
 <map id="src/tools/hdlcd&#45;hexchanger/main.cpp" name="src/tools/hdlcd&#45;hexchanger/main.cpp">
-<area shape="rect" id="node6" href="$HdlcdPacketDataPrinter_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="99,95,283,121"/>
-<area shape="rect" id="node9" href="$LineReader_8h.html" title="The hdlc&#45;tools implement the HDLC protocol to easily talk to devices connected via serial communicati..." alt="" coords="409,95,515,121"/>
+<area shape="rect" id="node7" href="$HdlcdPacketDataPrinter_8h.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="104,95,288,121"/>
+<area shape="rect" id="node10" href="$LineReader_8h.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="413,95,520,121"/>
 </map>
