@@ -22,39 +22,72 @@
 #include "Config.h"
 #include <iostream>
 #include <boost/asio.hpp>
+#include <boost/program_options.hpp>
+#include <boost/regex.hpp>
 #include "HdlcdAccessClient.h"
 #include "HdlcdPacketCtrl.h"
 
 int main(int argc, char* argv[]) {
     try {
-        std::cerr << "HDLCd port killer v" << HDLCD_TOOLS_VERSION_MAJOR << "." << HDLCD_TOOLS_VERSION_MINOR << std::endl;
-        if (argc != 4) {
-            std::cerr << "Usage: hdlcd-portkill <host> <port> <usb-device>\n";
+        // Declare the supported options.
+        boost::program_options::options_description l_Description("Allowed options");
+        l_Description.add_options()
+            ("help,h",    "produce this help message")
+            ("version,v", "show version information")
+            ("connect,c", boost::program_options::value<std::string>(),
+                          "connect to a single device via the HDLCd\n"
+                          "syntax: SerialPort@IPAddess:PortNbr\n"
+                          "  linux:   /dev/ttyUSB0@localhost:5001\n"
+                          "  windows: //./COM1@example.com:5001")
+        ;
+
+        // Parse the command line
+        boost::program_options::variables_map l_VariablesMap;
+        boost::program_options::store(boost::program_options::parse_command_line(argc, argv, l_Description), l_VariablesMap);
+        boost::program_options::notify(l_VariablesMap);
+        if (l_VariablesMap.count("version")) {
+            std::cerr << "HDLCd port killer version " << HDLCD_TOOLS_VERSION_MAJOR << "." << HDLCD_TOOLS_VERSION_MINOR
+                      << " built with hdlcd-devel version " << HDLCD_DEVEL_VERSION_MAJOR << "." << HDLCD_DEVEL_VERSION_MINOR << std::endl;
+        } // if
+
+        if (l_VariablesMap.count("help")) {
+            std::cout << l_Description << std::endl;
+            return 1;
+        } // if
+        
+        if (!l_VariablesMap.count("connect")) {
+            std::cout << "you have to specify one device to connect to" << std::endl;
             return 1;
         } // if
 
         // Install signal handlers
-        boost::asio::io_service io_service;
-        boost::asio::signal_set signals_(io_service);
-        signals_.add(SIGINT);
-        signals_.add(SIGTERM);
-        signals_.async_wait([&io_service](boost::system::error_code a_ErrorCode, int a_SignalNumber){io_service.stop();});
+        boost::asio::io_service l_IoService;
+        boost::asio::signal_set l_Signals(l_IoService);
+        l_Signals.add(SIGINT);
+        l_Signals.add(SIGTERM);
+        l_Signals.async_wait([&l_IoService](boost::system::error_code, int){ l_IoService.stop(); });
         
-        // Resolve destination
-        boost::asio::ip::tcp::resolver resolver(io_service);
-        auto endpoint_iterator = resolver.resolve({ argv[1], argv[2] });
-        
-        // Prepare access protocol entity: 0x10: Port status only, no data exchange, port status read and write
-        HdlcdAccessClient l_AccessClient(io_service, endpoint_iterator, argv[3], 0x10);
-        l_AccessClient.SetOnClosedCallback([&io_service](){io_service.stop();});
-        l_AccessClient.Send(std::move(HdlcdPacketCtrl::CreatePortKillRequest()));
-
-        // Start event processing
-        io_service.run();
-    } catch (std::exception& e) {
-        std::cerr << "Exception: " << e.what() << "\n";
+        // Parse the destination specifier
+        static boost::regex s_RegEx("^(.*?)@(.*?):(.*?)$");
+        boost::smatch l_Match;
+        if (boost::regex_match(l_VariablesMap["connect"].as<std::string>(), l_Match, s_RegEx)) {
+            // Resolve destination
+            boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
+            auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
+            
+            // Prepare access protocol entity: 0x10: Port status only, no data exchange, port status read and write
+            HdlcdAccessClient l_AccessClient(l_IoService, l_EndpointIterator, l_Match[1], 0x10);
+            l_AccessClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
+            l_AccessClient.Send(std::move(HdlcdPacketCtrl::CreatePortKillRequest()));
+            
+            // Start event processing
+            l_IoService.run();
+        } else {
+            throw boost::program_options::validation_error(boost::program_options::validation_error::invalid_option_value);
+        } // else
+    } catch (std::exception& a_Error) {
+        std::cerr << "Exception: " << a_Error.what() << "\n";
     } // catch
 
     return 0;
 }
-

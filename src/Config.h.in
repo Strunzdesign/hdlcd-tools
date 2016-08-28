@@ -1,3 +1,4 @@
 // The configured options and settings for the HDLCd Tools
+#include "HdlcdConfig.h"
 #define HDLCD_TOOLS_VERSION_MAJOR @HDLCD_TOOLS_VERSION_MAJOR@
 #define HDLCD_TOOLS_VERSION_MINOR @HDLCD_TOOLS_VERSION_MINOR@
