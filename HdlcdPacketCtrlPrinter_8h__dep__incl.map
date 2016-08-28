@@ -1,4 +1,4 @@
-<map id="src/include/HdlcdPacketCtrlPrinter.h" name="src/include/HdlcdPacketCtrlPrinter.h">
-<area shape="rect" id="node2" href="$hdlcd-monitor_2main_8cpp.html" title="src/tools/hdlcd&#45;monitor\l/main.cpp" alt="" coords="5,95,169,136"/>
-<area shape="rect" id="node3" href="$hdlcd-suspender_2main_8cpp.html" title="src/tools/hdlcd&#45;suspender\l/main.cpp" alt="" coords="193,95,376,136"/>
+<map id="src/shared/HdlcdPacketCtrlPrinter.h" name="src/shared/HdlcdPacketCtrlPrinter.h">
+<area shape="rect" id="node2" href="$main-hdlcd-monitor_8cpp.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="5,95,169,136"/>
+<area shape="rect" id="node3" href="$main-hdlcd-suspender_8cpp.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="193,95,384,136"/>
 </map>

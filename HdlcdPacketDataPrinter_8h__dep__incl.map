@@ -1,7 +1,7 @@
-<map id="src/include/HdlcdPacketDataPrinter.h" name="src/include/HdlcdPacketDataPrinter.h">
-<area shape="rect" id="node2" href="$hdlcd-hexchanger_2main_8cpp.html" title="src/tools/hdlcd&#45;hexchanger\l/main.cpp" alt="" coords="5,95,197,136"/>
-<area shape="rect" id="node3" href="$hdlcd-hexdump_2main_8cpp.html" title="src/tools/hdlcd&#45;hexdump\l/main.cpp" alt="" coords="222,95,397,136"/>
-<area shape="rect" id="node4" href="$hdlcd-hexdump-payload_2main_8cpp.html" title="src/tools/hdlcd&#45;hexdump\l&#45;payload/main.cpp" alt="" coords="421,95,595,136"/>
-<area shape="rect" id="node5" href="$hdlcd-pcapstreamer_2main_8cpp.html" title="src/tools/hdlcd&#45;pcapstreamer\l/main.cpp" alt="" coords="619,95,823,136"/>
-<area shape="rect" id="node6" href="$hdlcd-pcapstreamer-payload_2main_8cpp.html" title="src/tools/hdlcd&#45;pcapstreamer\l&#45;payload/main.cpp" alt="" coords="847,95,1051,136"/>
+<map id="src/shared/HdlcdPacketDataPrinter.h" name="src/shared/HdlcdPacketDataPrinter.h">
+<area shape="rect" id="node2" href="$main-hdlcd-hexchanger_8cpp.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="5,102,204,143"/>
+<area shape="rect" id="node3" href="$main-hdlcd-hexdump_8cpp.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="228,102,403,143"/>
+<area shape="rect" id="node4" href="$main-hdlcd-hexdump-payload_8cpp.html" title="src/hdlcd&#45;hexdump&#45;payload\l/main&#45;hdlcd&#45;hexdump&#45;payload.cpp" alt="" coords="427,102,662,143"/>
+<area shape="rect" id="node5" href="$main-hdlcd-pcapstreamer_8cpp.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="686,102,897,143"/>
+<area shape="rect" id="node6" href="$main-hdlcd-pcapstreamer-payload_8cpp.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="921,95,1160,151"/>
 </map>
