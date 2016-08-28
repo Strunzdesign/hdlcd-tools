@@ -2,15 +2,15 @@ This file gives some examples how to use the collection of tools to be used toge
 ---
 All of these tools require the device to connect to via a HDLC daemon via:
 1.) --connect SerialPort@IPAddess:PortNbr
-2.) Some tools allow a fourth parameter to provide hex numbers describing payload
+2.) Some tools allow a fourth parameter, e.g., to provide a hex dump describing payload
 3.) Each tool supports the --help command line switch to provide detailled information
 
 Example (GNU/Linux):
 
 cd build/src/tools/hdlcd-dissector
-./hdlcd-dissector /dev/ttyUSB0@127.0.0.1:10000
+./hdlcd-dissector --connect /dev/ttyUSB0@127.0.0.1:10000
 
 Example (Microsoft Windows):
 
 cd build\src\tools\hdlcd-dissector
-hdlcd-dissector.exe //./COM1@127.0.0.1:10000 
+hdlcd-dissector.exe --connect //./COM1@127.0.0.1:10000 
