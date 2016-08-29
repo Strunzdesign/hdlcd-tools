@@ -7,10 +7,10 @@ All of these tools require the device to connect to via a HDLC daemon via:
 
 Example (GNU/Linux):
 
-cd build/src/tools/hdlcd-dissector
+cd build/src/hdlcd-dissector
 ./hdlcd-dissector --connect /dev/ttyUSB0@127.0.0.1:10000
 
 Example (Microsoft Windows):
 
-cd build\src\tools\hdlcd-dissector
+cd build\src\hdlcd-dissector
 hdlcd-dissector.exe --connect //./COM1@127.0.0.1:10000 
