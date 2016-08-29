@@ -46,6 +46,6 @@ To compile and install the HDLC daemon tools, just follow these steps:
 10.) make
 11.) make install
 
-The "hdlcd-tools" binaries will be installed to "C:\hdlcd-tools\bin\".
+The "hdlcd-tools" binaries will be installed to "C:\hdlcd-tools\bin\" if not specified differently.
 
 Have fun :-)
