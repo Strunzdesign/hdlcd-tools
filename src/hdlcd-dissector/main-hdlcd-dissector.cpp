@@ -24,7 +24,7 @@
 #include <boost/asio.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
-#include "HdlcdAccessClient.h"
+#include "HdlcdClient.h"
 #include "FramePrinter.h"
 
 int main(int argc, char* argv[]) {
@@ -74,10 +74,10 @@ int main(int argc, char* argv[]) {
             boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
             auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
             
-            // Prepare access protocol entity
-            HdlcdAccessClient l_AccessClient(l_IoService, l_EndpointIterator, l_Match[1], 0x43);
-            l_AccessClient.SetOnDataCallback([](const HdlcdPacketData& a_PacketData){ PrintDissectedFrame(a_PacketData.GetWasSent(), a_PacketData.GetData()); });
-            l_AccessClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
+            // Prepare HDLCd access protocol entity
+            HdlcdClient l_HdlcdClient(l_IoService, l_EndpointIterator, l_Match[1], 0x43);
+            l_HdlcdClient.SetOnDataCallback([](const HdlcdPacketData& a_PacketData){ PrintDissectedFrame(a_PacketData.GetWasSent(), a_PacketData.GetData()); });
+            l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
             
             // Start event processing
             l_IoService.run();

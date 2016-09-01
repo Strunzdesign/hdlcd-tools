@@ -24,7 +24,7 @@
 #include <boost/asio.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
-#include "HdlcdAccessClient.h"
+#include "HdlcdClient.h"
 #include "HdlcdPacketCtrl.h"
 
 int main(int argc, char* argv[]) {
@@ -75,10 +75,10 @@ int main(int argc, char* argv[]) {
             boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
             auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
             
-            // Prepare access protocol entity: 0x10: Port status only, no data exchange, port status read and write
-            HdlcdAccessClient l_AccessClient(l_IoService, l_EndpointIterator, l_Match[1], 0x10);
-            l_AccessClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
-            l_AccessClient.Send(std::move(HdlcdPacketCtrl::CreatePortKillRequest()));
+            // Prepare HDLCd access protocol entity: 0x10: Port status only, no data exchange, port status read and write
+            HdlcdClient l_HdlcdClient(l_IoService, l_EndpointIterator, l_Match[1], 0x10);
+            l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
+            l_HdlcdClient.Send(std::move(HdlcdPacketCtrl::CreatePortKillRequest()));
             
             // Start event processing
             l_IoService.run();

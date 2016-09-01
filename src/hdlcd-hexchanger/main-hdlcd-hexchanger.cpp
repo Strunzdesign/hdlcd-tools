@@ -25,7 +25,7 @@
 #include <boost/asio.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
-#include "HdlcdAccessClient.h"
+#include "HdlcdClient.h"
 #include "HdlcdPacketDataPrinter.h"
 #include "LineReader.h"
 
@@ -77,14 +77,14 @@ int main(int argc, char* argv[]) {
             boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
             auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
             
-            // Prepare access protocol entity: 0x01 = Payload Raw RO, RX and TX, RECV_CTRL
-            HdlcdAccessClient l_AccessClient(l_IoService, l_EndpointIterator, l_Match[1], 0x01);
-            l_AccessClient.SetOnDataCallback([](const HdlcdPacketData& a_PacketData){ HdlcdPacketDataPrinter(a_PacketData); });
-            l_AccessClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
+            // Prepare HDLCd access protocol entity: 0x01 = Payload Raw RO, RX and TX, RECV_CTRL
+            HdlcdClient l_HdlcdClient(l_IoService, l_EndpointIterator, l_Match[1], 0x01);
+            l_HdlcdClient.SetOnDataCallback([](const HdlcdPacketData& a_PacketData){ HdlcdPacketDataPrinter(a_PacketData); });
+            l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
 
             // Prepare input
             LineReader l_LineReader(l_IoService);
-            l_LineReader.SetOnInputLineCallback([&l_AccessClient](const std::vector<unsigned char> a_Buffer){ l_AccessClient.Send(std::move(HdlcdPacketData::CreatePacket(a_Buffer, true)));});       
+            l_LineReader.SetOnInputLineCallback([&l_HdlcdClient](const std::vector<unsigned char> a_Buffer){ l_HdlcdClient.Send(std::move(HdlcdPacketData::CreatePacket(a_Buffer, true)));});       
             
             // Start event processing
             l_IoService.run();
