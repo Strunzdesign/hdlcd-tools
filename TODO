@@ -1,0 +1,15 @@
+Issues to be resolved before a first release:
+- Doxygen (STARTED)
+- Fix all the TODOs in the source code
+
+
+
+Issues to be resolved after the first release:
+- More tools: pcap-streamer for multiple session types to analyze traffic via wireshark using named pipes (STARTED)
+- Fix the hdlc-hexchanger tool for non-posix platforms (MS Windows)... how?
+
+
+
+// DONE
+- Add command line switches and online help ("-h --help") to all tools (DONE)
+file:///home/florian/projects/hdlcd/TODO
