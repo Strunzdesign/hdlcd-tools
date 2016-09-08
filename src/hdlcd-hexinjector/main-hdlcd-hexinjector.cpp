@@ -39,7 +39,8 @@ int main(int argc, char* argv[]) {
                           "syntax: SerialPort@IPAddess:PortNbr\n"
                           "  linux:   /dev/ttyUSB0@localhost:5001\n"
                           "  windows: //./COM1@example.com:5001")
-            ("payload,p", "quoted payload to be sent as hex dump")
+            ("payload,p", boost::program_options::value<std::string>(),
+                          "quoted payload to be sent as hex dump")
         ;
 
         // Parse the command line
