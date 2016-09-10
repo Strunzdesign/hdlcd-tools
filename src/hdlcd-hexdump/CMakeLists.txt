@@ -8,7 +8,7 @@ include_directories("${PROJECT_SOURCE_DIR}/src/shared")
 find_package(Threads)
 
 add_executable(hdlcd-hexdump
-main-hdlcd-hexdump.cpp
+    main-hdlcd-hexdump.cpp
 )
 
 if(WIN32)
@@ -18,9 +18,9 @@ else()
 endif()
 
 target_link_libraries(hdlcd-hexdump
-${Boost_LIBRARIES}
-${CMAKE_THREAD_LIBS_INIT}
-${ADDITIONAL_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ADDITIONAL_LIBRARIES}
 )
 
 install(TARGETS hdlcd-hexdump RUNTIME DESTINATION bin)

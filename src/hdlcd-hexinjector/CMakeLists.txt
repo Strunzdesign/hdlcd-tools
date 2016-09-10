@@ -8,7 +8,7 @@ include_directories("${PROJECT_SOURCE_DIR}/src/shared")
 find_package(Threads)
 
 add_executable(hdlcd-hexinjector
-main-hdlcd-hexinjector.cpp
+    main-hdlcd-hexinjector.cpp
 )
 
 if(WIN32)
@@ -18,9 +18,9 @@ else()
 endif()
 
 target_link_libraries(hdlcd-hexinjector
-${Boost_LIBRARIES}
-${CMAKE_THREAD_LIBS_INIT}
-${ADDITIONAL_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ADDITIONAL_LIBRARIES}
 )
 
 install(TARGETS hdlcd-hexinjector RUNTIME DESTINATION bin)

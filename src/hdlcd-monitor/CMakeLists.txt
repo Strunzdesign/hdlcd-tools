@@ -8,7 +8,7 @@ include_directories("${PROJECT_SOURCE_DIR}/src/shared")
 find_package(Threads)
 
 add_executable(hdlcd-monitor
-main-hdlcd-monitor.cpp
+    main-hdlcd-monitor.cpp
 )
 
 if(WIN32)
@@ -18,9 +18,9 @@ else()
 endif()
 
 target_link_libraries(hdlcd-monitor
-${Boost_LIBRARIES}
-${CMAKE_THREAD_LIBS_INIT}
-${ADDITIONAL_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ADDITIONAL_LIBRARIES}
 )
 
 install(TARGETS hdlcd-monitor RUNTIME DESTINATION bin)

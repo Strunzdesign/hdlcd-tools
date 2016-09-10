@@ -8,7 +8,7 @@ include_directories("${PROJECT_SOURCE_DIR}/src/shared")
 find_package(Threads)
 
 add_executable(hdlcd-hexchanger
-main-hdlcd-hexchanger.cpp
+    main-hdlcd-hexchanger.cpp
 )
 
 if(WIN32)
@@ -18,10 +18,9 @@ else()
 endif()
 
 target_link_libraries(hdlcd-hexchanger
-${Boost_LIBRARIES}
-${CMAKE_THREAD_LIBS_INIT}
-${ADDITIONAL_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ADDITIONAL_LIBRARIES}
 )
 
 install(TARGETS hdlcd-hexchanger RUNTIME DESTINATION bin)
-

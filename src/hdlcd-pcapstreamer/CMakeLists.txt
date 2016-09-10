@@ -8,7 +8,7 @@ include_directories("${PROJECT_SOURCE_DIR}/src/shared")
 find_package(Threads)
 
 add_executable(hdlcd-pcapstreamer
-main-hdlcd-pcapstreamer.cpp
+    main-hdlcd-pcapstreamer.cpp
 )
 
 if(WIN32)
@@ -18,9 +18,9 @@ else()
 endif()
 
 target_link_libraries(hdlcd-pcapstreamer
-${Boost_LIBRARIES}
-${CMAKE_THREAD_LIBS_INIT}
-${ADDITIONAL_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ADDITIONAL_LIBRARIES}
 )
 
 install(TARGETS hdlcd-pcapstreamer RUNTIME DESTINATION bin)

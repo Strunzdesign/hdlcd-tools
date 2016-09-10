@@ -8,7 +8,7 @@ include_directories("${PROJECT_SOURCE_DIR}/src/shared")
 find_package(Threads)
 
 add_executable(hdlcd-portkiller
-main-hdlcd-portkiller.cpp
+    main-hdlcd-portkiller.cpp
 )
 
 if(WIN32)
@@ -18,9 +18,9 @@ else()
 endif()
 
 target_link_libraries(hdlcd-portkiller
-${Boost_LIBRARIES}
-${CMAKE_THREAD_LIBS_INIT}
-${ADDITIONAL_LIBRARIES}
+    ${Boost_LIBRARIES}
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${ADDITIONAL_LIBRARIES}
 )
 
 install(TARGETS hdlcd-portkiller RUNTIME DESTINATION bin)
