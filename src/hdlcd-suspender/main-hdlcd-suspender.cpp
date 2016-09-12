@@ -77,13 +77,20 @@ int main(int argc, char* argv[]) {
             // Resolve destination
             boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
             auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
-            
-            // Prepare HDLCd access protocol entity: 0x10: Port status only, no data exchange, port status read and write
-            HdlcdClient l_HdlcdClient(l_IoService, l_EndpointIterator, l_Match[1], 0x10);
-            l_HdlcdClient.SetOnCtrlCallback([](const HdlcdPacketCtrl& a_PacketCtrl){ HdlcdPacketCtrlPrinter(a_PacketCtrl); });
+
+            // Prepare the HDLCd client entity: 0x10: Port status only, no data exchange, port status read and write
+            HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x10);
             l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
-            l_HdlcdClient.Send(std::move(HdlcdPacketCtrl::CreatePortStatusRequest(true)));
-            
+            l_HdlcdClient.SetOnCtrlCallback([](const HdlcdPacketCtrl& a_PacketCtrl){ HdlcdPacketCtrlPrinter(a_PacketCtrl); });
+            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_HdlcdClient](bool a_bSuccess) {
+                if (a_bSuccess) {
+                    // Send port suspend request control packet
+                    l_HdlcdClient.Send(HdlcdPacketCtrl::CreatePortStatusRequest(true));
+                } else {
+                    std::cout << "Failed to connect to the HDLC Daemon!" << std::endl;
+                } // else
+            }); // AsyncConnect
+
             // Start event processing
             l_IoService.run();
         } else {

@@ -84,18 +84,23 @@ int main(int argc, char* argv[]) {
             boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
             auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
             
-            // Prepare HDLCd access protocol entity
-            HdlcdClient l_AccessClient(l_IoService, l_EndpointIterator, l_Match[1], 0x00);
-            l_AccessClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });            
-
-            // Prepare input
-            std::istringstream l_InputStream(l_VariablesMap["payload"].as<std::string>());
-            l_InputStream >> std::hex;
-            std::vector<unsigned char> l_Buffer;
-            l_Buffer.reserve(65536);
-            l_Buffer.insert(l_Buffer.end(),std::istream_iterator<unsigned int>(l_InputStream), {});
-            l_AccessClient.Send(std::move(HdlcdPacketData::CreatePacket(l_Buffer, true)));
-            l_AccessClient.Shutdown();
+            // Prepare the HDLCd client entity: 0x00: Data TX only, Ctrl RX/TX
+            HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x00);
+            l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
+            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_VariablesMap, &l_HdlcdClient](bool a_bSuccess) {
+                if (a_bSuccess) {
+                    // Prepare input
+                    std::istringstream l_InputStream(l_VariablesMap["payload"].as<std::string>());
+                    l_InputStream >> std::hex;
+                    std::vector<unsigned char> l_Buffer;
+                    l_Buffer.reserve(65536);
+                    l_Buffer.insert(l_Buffer.end(),std::istream_iterator<unsigned int>(l_InputStream), {});
+                    l_HdlcdClient.Send(std::move(HdlcdPacketData::CreatePacket(l_Buffer, true)));
+                    l_HdlcdClient.Shutdown();
+                } else {
+                    std::cout << "Failed to connect to the HDLC Daemon!" << std::endl;
+                } // else
+            }); // AsyncConnect
             
             // Start event processing
             l_IoService.run();

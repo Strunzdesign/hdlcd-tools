@@ -76,12 +76,17 @@ int main(int argc, char* argv[]) {
             // Resolve destination
             boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
             auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
-            
-            // Prepare HDLCd access protocol entity: 0x21 = Payload Raw RO, RX only, RECV_CTRL
-            HdlcdClient l_HdlcdClient(l_IoService, l_EndpointIterator, l_Match[1], 0x21);
+
+            // Prepare the HDLCd client entity: 0x21 = Payload Raw RO, RX only, RECV_CTRL
+            HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x21);
+            l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
             l_HdlcdClient.SetOnDataCallback([](const HdlcdPacketData& a_PacketData){ PrintLogEntry(a_PacketData.GetData()); });
-            l_HdlcdClient.SetOnClosedCallback([&l_IoService](){l_IoService.stop();});
-            
+            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [](bool a_bSuccess) {
+                if (!a_bSuccess) {
+                    std::cout << "Failed to connect to the HDLC Daemon!" << std::endl;
+                } // if
+            }); // AsyncConnect
+
             // Start event processing
             l_IoService.run();
         } else {

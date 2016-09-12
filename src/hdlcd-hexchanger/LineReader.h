@@ -41,8 +41,8 @@ public:
 private:
     // Helpers
     void do_read() {
-        boost::asio::async_read_until(m_InputStream, m_InputBuffer, '\n',[this](boost::system::error_code ec, std::size_t length) {
-            if (!ec) {
+        boost::asio::async_read_until(m_InputStream, m_InputBuffer, '\n',[this](boost::system::error_code a_ErrorCode, size_t) {
+            if (!a_ErrorCode) {
                 // Obtain one line from the input buffer, parse the provided hex dump, and create a StreamFrame from it
                 char l_InputLineBuffer[1000];
                 m_InputReader.getline(l_InputLineBuffer,1000);
