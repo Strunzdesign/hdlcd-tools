@@ -80,12 +80,13 @@ int main(int argc, char* argv[]) {
             // Prepare the HDLCd client entity: 0x10: Port status only, no data exchange, port status read and write
             HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x10);
             l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
-            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_HdlcdClient](bool a_bSuccess) {
+            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_HdlcdClient, &l_Signals](bool a_bSuccess) {
                 if (a_bSuccess) {
                     // Send port kill request control packet
                     l_HdlcdClient.Send(HdlcdPacketCtrl::CreatePortKillRequest());
                 } else {
                     std::cout << "Failed to connect to the HDLC Daemon!" << std::endl;
+                    l_Signals.cancel();
                 } // else
             }); // AsyncConnect
 

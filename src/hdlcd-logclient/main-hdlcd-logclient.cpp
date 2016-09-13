@@ -81,9 +81,10 @@ int main(int argc, char* argv[]) {
             HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x21);
             l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
             l_HdlcdClient.SetOnDataCallback([](const HdlcdPacketData& a_PacketData){ PrintLogEntry(a_PacketData.GetData()); });
-            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [](bool a_bSuccess) {
+            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_Signals](bool a_bSuccess) {
                 if (!a_bSuccess) {
                     std::cout << "Failed to connect to the HDLC Daemon!" << std::endl;
+                    l_Signals.cancel();
                 } // if
             }); // AsyncConnect
 
