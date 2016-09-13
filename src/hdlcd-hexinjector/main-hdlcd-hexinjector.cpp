@@ -22,10 +22,34 @@
 #include "Config.h"
 #include <iostream>
 #include <vector>
+#include <list>
 #include <boost/asio.hpp>
 #include <boost/program_options.hpp>
 #include <boost/regex.hpp>
 #include "HdlcdClient.h"
+
+class SystemStopper {
+public:
+    // DTOR
+    ~SystemStopper() {
+        Stop();
+    }
+    
+    void RegisterStopperCallback(std::function<void()> a_StopperCallback) {
+        m_StopperCallbackList.push_back(a_StopperCallback);
+    }
+    
+    void Stop() {
+        while (!m_StopperCallbackList.empty()) {
+            auto l_StopperCallback = m_StopperCallbackList.front();
+            m_StopperCallbackList.pop_front();
+            l_StopperCallback();
+        } // while
+    }
+    
+private:
+    std::list<std::function<void()>> m_StopperCallbackList;
+};
 
 int main(int argc, char* argv[]) {
     try {
@@ -69,12 +93,17 @@ int main(int argc, char* argv[]) {
             return 1;
         } // if
 
-        // Install signal handlers
+        // Initialize main components
         boost::asio::io_service l_IoService;
+        SystemStopper l_SystemStopper;
+        
+        // Install signal handlers
         boost::asio::signal_set l_Signals(l_IoService);
         l_Signals.add(SIGINT);
         l_Signals.add(SIGTERM);
-        l_Signals.async_wait([&l_IoService](boost::system::error_code, int){ l_IoService.stop(); });
+        l_Signals.async_wait([&l_SystemStopper](boost::system::error_code, int){ l_SystemStopper.Stop(); });
+        l_SystemStopper.RegisterStopperCallback([&l_Signals](){ l_Signals.cancel(); });
+        l_SystemStopper.Stop();
         
         // Parse the destination specifier
         static boost::regex s_RegEx("^(.*?)@(.*?):(.*?)$");
@@ -86,8 +115,9 @@ int main(int argc, char* argv[]) {
             
             // Prepare the HDLCd client entity: 0x00: Data TX only, Ctrl RX/TX
             HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x00);
-            l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
-            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_VariablesMap, &l_HdlcdClient](bool a_bSuccess) {
+            l_HdlcdClient.SetOnClosedCallback([&l_SystemStopper](){ l_SystemStopper.Stop(); });
+            l_SystemStopper.RegisterStopperCallback([&l_HdlcdClient](){ l_HdlcdClient.Close(); });
+            l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_VariablesMap, &l_HdlcdClient, &l_SystemStopper](bool a_bSuccess) {
                 if (a_bSuccess) {
                     // Prepare input
                     std::istringstream l_InputStream(l_VariablesMap["payload"].as<std::string>());
@@ -99,6 +129,7 @@ int main(int argc, char* argv[]) {
                     l_HdlcdClient.Shutdown();
                 } else {
                     std::cout << "Failed to connect to the HDLC Daemon!" << std::endl;
+                    l_SystemStopper.Stop();
                 } // else
             }); // AsyncConnect
             
