@@ -78,8 +78,8 @@ int main(int argc, char* argv[]) {
             boost::asio::ip::tcp::resolver l_Resolver(l_IoService);
             auto l_EndpointIterator = l_Resolver.resolve({ l_Match[2], l_Match[3] });
 
-            // Prepare the HDLCd client entity: 0x10: Port status only, no data exchange, port status read and write
-            HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x10);
+            // Prepare the HDLCd client entity
+            HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], HdlcdSessionDescriptor(SESSION_TYPE_TRX_STATUS, SESSION_FLAGS_NONE));
             l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
             l_HdlcdClient.SetOnCtrlCallback([](const HdlcdPacketCtrl& a_PacketCtrl){ HdlcdPacketCtrlPrinter(a_PacketCtrl); });
             l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_Signals](bool a_bSuccess) {

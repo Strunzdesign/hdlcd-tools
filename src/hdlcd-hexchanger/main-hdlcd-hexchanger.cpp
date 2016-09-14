@@ -83,8 +83,8 @@ int main(int argc, char* argv[]) {
             // Prepare input
             LineReader l_LineReader(l_IoService);
             
-            // Prepare the HDLCd client entity: 0x01 = Payload Raw RO, RX and TX, RECV_CTRL
-            HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], 0x01);
+            // Prepare the HDLCd client entity
+            HdlcdClient l_HdlcdClient(l_IoService, l_Match[1], HdlcdSessionDescriptor(SESSION_TYPE_TRX_ALL, SESSION_FLAGS_DELIVER_RCVD));
             l_HdlcdClient.SetOnClosedCallback([&l_IoService](){ l_IoService.stop(); });
             l_HdlcdClient.SetOnDataCallback([](const HdlcdPacketData& a_PacketData){ HdlcdPacketDataPrinter(a_PacketData); });
             l_HdlcdClient.AsyncConnect(l_EndpointIterator, [&l_HdlcdClient, &l_LineReader, &l_Signals](bool a_bSuccess) {
