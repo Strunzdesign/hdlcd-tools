@@ -58,7 +58,8 @@ int main(int argc, char* argv[]) {
         } // if
         
         if (!l_VariablesMap.count("connect")) {
-            std::cout << "you have to specify one device to connect to" << std::endl;
+            std::cout << "hdlcd-logclient: you have to specify one device to connect to" << std::endl;
+            std::cout << "hdlcd-logclient: Use --help for more information." << std::endl;
             return 1;
         } // if
 

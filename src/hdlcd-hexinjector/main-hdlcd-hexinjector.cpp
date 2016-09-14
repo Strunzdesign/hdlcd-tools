@@ -84,12 +84,14 @@ int main(int argc, char* argv[]) {
         } // if
         
         if (!l_VariablesMap.count("connect")) {
-            std::cout << "you have to specify one device to connect to" << std::endl;
+            std::cout << "hdlcd-hexinjector: you have to specify one device to connect to" << std::endl;
+            std::cout << "hdlcd-hexinjector: Use --help for more information." << std::endl;
             return 1;
         } // if
         
         if (!l_VariablesMap.count("payload")) {
-            std::cout << "you have to provide a payload to be transmitted" << std::endl;
+            std::cout << "hdlcd-hexinjector: you have to provide a payload to be transmitted" << std::endl;
+            std::cout << "hdlcd-hexinjector: Use --help for more information." << std::endl;
             return 1;
         } // if
 
