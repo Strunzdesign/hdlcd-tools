@@ -2,7 +2,7 @@ This repository contains multiple tools to be used together with the HDLC Daemon
 
 hdlcd-dissector
 ---
-Usage:       hdlcd-dissector --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-dissector --connect SerialPort@IPAddress:PortNbr
 Description: Prints out all HDLC frames sent to and received from the specified device in
              human-readable form.
 
@@ -10,7 +10,7 @@ Description: Prints out all HDLC frames sent to and received from the specified 
 
 hdlcd-hexchanger
 ---
-Usage:       hdlcd-hexchanger --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-hexchanger --connect SerialPort@IPAddress:PortNbr
 Description: Interactive application to read incoming payload as hex output while
              allowing to drop hex input for transmission to the specified device.
              Not available on Microsoft Windows!
@@ -19,7 +19,7 @@ Description: Interactive application to read incoming payload as hex output whil
 
 hdlcd-hexdump
 ---
-Usage:       hdlcd-hexdump --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-hexdump --connect SerialPort@IPAddress:PortNbr
 Description: Prints out all HDLC frames sent to and received from the specified device as
              hex dump.
              
@@ -27,7 +27,7 @@ Description: Prints out all HDLC frames sent to and received from the specified 
 
 hdlcd-hexdump-payload
 ---
-Usage:       hdlcd-hexdump-payload --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-hexdump-payload --connect SerialPort@IPAddress:PortNbr
 Description: Prints out all payload of HDLC frames sent to and received from the specified
              device as hex dump.
 
@@ -35,14 +35,14 @@ Description: Prints out all payload of HDLC frames sent to and received from the
 
 hdlcd-hexinjector
 ---
-Usage:       hdlcd-hexinjector  --connect SerialPort@IPAddess:PortNbr "<HEXDUMP>"
+Usage:       hdlcd-hexinjector  --connect SerialPort@IPAddress:PortNbr "<HEXDUMP>"
 Description: Sends hex dump payload to specified device and terminates.
 
 
 
 hdlcd-logclient
 ---
-Usage:       hdlcd-logclient  --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-logclient  --connect SerialPort@IPAddress:PortNbr
 Description: Prints out all payload of HDLC frames received from the specified device as hex dump
              together with a UTC timestamp.
 
@@ -50,7 +50,7 @@ Description: Prints out all payload of HDLC frames received from the specified d
              
 hdlcd-monitor
 ---
-Usage:       hdlcd-monitor  --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-monitor  --connect SerialPort@IPAddress:PortNbr
 Description: Prints all status changes regarding the specified device, e.g., regarding
              the alive state or whether the device is currently locked or not.
 
@@ -58,21 +58,21 @@ Description: Prints all status changes regarding the specified device, e.g., reg
 
 hdlcd-pcapstreamer
 ---
-Usage:       hdlcd-pcapstreamer-hdlc  --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-pcapstreamer-hdlc  --connect SerialPort@IPAddress:PortNbr
 Description: NOT READY YET! Planned to be an adaptor to feed HDLC frames to Wireshark.
 
 
 
 hdlcd-pcapstreamer-payload
 ---
-Usage:       hdlcd-pcapstreamer-payload  --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-pcapstreamer-payload  --connect SerialPort@IPAddress:PortNbr
 Description: NOT READY YET! Planned to be an adaptor to feed HDLC payload to Wireshark.
 
 
 
 hdlcd-portkiller
 ---
-Usage:       hdlcd-portkill  --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-portkill  --connect SerialPort@IPAddress:PortNbr
 Description: Instantly kill the serial port handler of the specified device within the HDLC Daemon.
              All related clients of the HDLC Daemon will be detached.
 
@@ -80,6 +80,6 @@ Description: Instantly kill the serial port handler of the specified device with
 
 hdlcd-suspender
 ---
-Usage:       hdlcd-suspender  --connect SerialPort@IPAddess:PortNbr
+Usage:       hdlcd-suspender  --connect SerialPort@IPAddress:PortNbr
 Description: Acquire a lock on the specified device. The lock is held as long as the application
              is running. Kill it with SIGINT (STRG-C) to release the lock.
