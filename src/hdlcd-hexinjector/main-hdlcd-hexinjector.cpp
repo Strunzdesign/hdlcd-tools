@@ -105,7 +105,6 @@ int main(int argc, char* argv[]) {
         l_Signals.add(SIGTERM);
         l_Signals.async_wait([&l_SystemStopper](boost::system::error_code, int){ l_SystemStopper.Stop(); });
         l_SystemStopper.RegisterStopperCallback([&l_Signals](){ l_Signals.cancel(); });
-        l_SystemStopper.Stop();
         
         // Parse the destination specifier
         static boost::regex s_RegEx("^(.*?)@(.*?):(.*?)$");
