@@ -1,3 +1,9 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$HdlcdPacketDataPrinter_8h.html#af918fae69f53090f7652f23c807765d4" title="HdlcdPacketDataPrinter" alt="" coords="105,5,279,32"/>
+<area shape="rect" id="node2" href="$classHdlcdClient.html#aca11bffddc34e66a67d7e738e9e8d6b3" title="Provide a callback method to be called if this client entity is closing. " alt="" coords="125,5,309,47"/>
+<area shape="rect" id="node3" href="$classHdlcdClient.html#a35c0dfb9e0e2ae4ac6e139b7737e0f55" title="Provide a callback method to be called for received data packets. " alt="" coords="105,71,328,98"/>
+<area shape="rect" id="node4" href="$HdlcdPacketDataPrinter_8h.html#af918fae69f53090f7652f23c807765d4" title="HdlcdPacketDataPrinter" alt="" coords="130,122,303,149"/>
+<area shape="rect" id="node8" href="$classHdlcdClient.html#a485e29db5cb483d9c0ac45febd963bbf" title="Perform an asynchronous connect procedure regarding both TCP sockets. " alt="" coords="121,173,312,199"/>
+<area shape="rect" id="node5" href="$classHdlcdPacketData.html#a3e3ed17e50f5689f9f044c62582f3194" title="HdlcdPacketData::GetWasSent" alt="" coords="376,71,593,98"/>
+<area shape="rect" id="node6" href="$classHdlcdPacketData.html#abc690e2d3d84998df23221f10f893f81" title="HdlcdPacketData::GetData" alt="" coords="389,122,580,149"/>
+<area shape="rect" id="node7" href="$classHdlcdPacketData.html#a8797aee7e556ae194f9a3a12e1900895" title="HdlcdPacketData::GetInvalid" alt="" coords="384,173,585,199"/>
 </map>

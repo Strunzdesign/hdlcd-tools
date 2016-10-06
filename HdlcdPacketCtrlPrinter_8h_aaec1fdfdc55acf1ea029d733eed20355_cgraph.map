@@ -1,0 +1,6 @@
+<map id="HdlcdPacketCtrlPrinter" name="HdlcdPacketCtrlPrinter">
+<area shape="rect" id="node2" href="$classHdlcdPacketCtrl.html#a8f4d35576f4ed5163ef49f8eb5f4d37d" title="HdlcdPacketCtrl::GetPacketType" alt="" coords="219,5,445,32"/>
+<area shape="rect" id="node3" href="$classHdlcdPacketCtrl.html#a12fc2b37905df9cbcaa84a9bee84fc1a" title="HdlcdPacketCtrl::GetIsAlive" alt="" coords="235,56,429,83"/>
+<area shape="rect" id="node4" href="$classHdlcdPacketCtrl.html#a00bca303fa168370388c078edd041e60" title="HdlcdPacketCtrl::GetIsLocked\lBySelf" alt="" coords="227,107,437,149"/>
+<area shape="rect" id="node5" href="$classHdlcdPacketCtrl.html#a128533b3f7e1d3d9386055171b227e80" title="HdlcdPacketCtrl::GetIsLocked\lByOthers" alt="" coords="227,173,437,214"/>
+</map>

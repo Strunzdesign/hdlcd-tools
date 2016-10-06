@@ -1,15 +1,11 @@
 var searchData=
 [
-  ['main',['main',['../main-hdlcd-dissector_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-dissector.cpp'],['../main-hdlcd-hexchanger_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-hexchanger.cpp'],['../main-hdlcd-hexdump_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-hexdump.cpp'],['../main-hdlcd-hexdump-payload_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-hexdump-payload.cpp'],['../main-hdlcd-hexinjector_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-hexinjector.cpp'],['../main-hdlcd-logclient_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-logclient.cpp'],['../main-hdlcd-monitor_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-monitor.cpp'],['../main-hdlcd-pcapstreamer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-pcapstreamer.cpp'],['../main-hdlcd-pcapstreamer-payload_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-pcapstreamer-payload.cpp'],['../main-hdlcd-portkiller_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-portkiller.cpp'],['../main-hdlcd-suspender_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main(int argc, char *argv[]):&#160;main-hdlcd-suspender.cpp']]],
-  ['main_2dhdlcd_2ddissector_2ecpp',['main-hdlcd-dissector.cpp',['../main-hdlcd-dissector_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dhexchanger_2ecpp',['main-hdlcd-hexchanger.cpp',['../main-hdlcd-hexchanger_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dhexdump_2dpayload_2ecpp',['main-hdlcd-hexdump-payload.cpp',['../main-hdlcd-hexdump-payload_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dhexdump_2ecpp',['main-hdlcd-hexdump.cpp',['../main-hdlcd-hexdump_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dhexinjector_2ecpp',['main-hdlcd-hexinjector.cpp',['../main-hdlcd-hexinjector_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dlogclient_2ecpp',['main-hdlcd-logclient.cpp',['../main-hdlcd-logclient_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dmonitor_2ecpp',['main-hdlcd-monitor.cpp',['../main-hdlcd-monitor_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dpcapstreamer_2dpayload_2ecpp',['main-hdlcd-pcapstreamer-payload.cpp',['../main-hdlcd-pcapstreamer-payload_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dpcapstreamer_2ecpp',['main-hdlcd-pcapstreamer.cpp',['../main-hdlcd-pcapstreamer_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dportkiller_2ecpp',['main-hdlcd-portkiller.cpp',['../main-hdlcd-portkiller_8cpp.html',1,'']]],
-  ['main_2dhdlcd_2dsuspender_2ecpp',['main-hdlcd-suspender.cpp',['../main-hdlcd-suspender_8cpp.html',1,'']]]
+  ['frame',['Frame',['../classFrame.html',1,'Frame'],['../classFrame.html#ad2e5946cf41d4817e750500acf05d02b',1,'Frame::Frame()']]],
+  ['frame_2eh',['Frame.h',['../Frame_8h.html',1,'']]],
+  ['frameendpoint',['FrameEndpoint',['../classFrameEndpoint.html',1,'FrameEndpoint'],['../classFrameEndpoint.html#a178e55ba831e53fb8eb7d8fcb816e53e',1,'FrameEndpoint::FrameEndpoint()']]],
+  ['frameendpoint_2eh',['FrameEndpoint.h',['../FrameEndpoint_8h.html',1,'']]],
+  ['frameprinter_2eh',['FramePrinter.h',['../FramePrinter_8h.html',1,'']]],
+  ['framing_5fversion_5fmajor',['FRAMING_VERSION_MAJOR',['../FramingConfig_8h.html#a0d7ef54e34bf8b29d3a623315a9026dd',1,'FramingConfig.h']]],
+  ['framing_5fversion_5fminor',['FRAMING_VERSION_MINOR',['../FramingConfig_8h.html#a5c1aaec3218f73bdf473f7050a07f0af',1,'FramingConfig.h']]],
+  ['framingconfig_2eh',['FramingConfig.h',['../FramingConfig_8h.html',1,'']]]
 ];

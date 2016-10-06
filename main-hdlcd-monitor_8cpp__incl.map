@@ -1,3 +1,12 @@
 <map id="src/hdlcd&#45;monitor/main&#45;hdlcd&#45;monitor.cpp" name="src/hdlcd&#45;monitor/main&#45;hdlcd&#45;monitor.cpp">
-<area shape="rect" id="node8" href="$HdlcdPacketCtrlPrinter_8h.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="789,95,965,121"/>
+<area shape="rect" id="node7" href="$HdlcdClient_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="859,95,965,121"/>
+<area shape="rect" id="node25" href="$HdlcdPacketCtrlPrinter_8h.html" title="Additional tools to be used together with the HDLC Daemon. Copyright (C) 2016 Florian Evers..." alt="" coords="648,169,824,196"/>
+<area shape="rect" id="node10" href="$HdlcdPacketEndpoint_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="456,169,624,196"/>
+<area shape="rect" id="node13" href="$FrameEndpoint_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="537,244,666,271"/>
+<area shape="rect" id="node19" href="$HdlcdPacketData_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="901,244,1043,271"/>
+<area shape="rect" id="node21" href="$HdlcdPacketCtrl_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="742,244,877,271"/>
+<area shape="rect" id="node22" href="$HdlcdSessionHeader_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="1127,169,1294,196"/>
+<area shape="rect" id="node17" href="$Frame_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="913,393,986,420"/>
+<area shape="rect" id="node20" href="$HdlcdPacket_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="893,319,1005,345"/>
+<area shape="rect" id="node23" href="$HdlcdSessionDescriptor_8h.html" title="Copyright (c) 2016, Florian Evers, florian&#45;evers@gmx.de All rights reserved. " alt="" coords="1119,244,1303,271"/>
 </map>

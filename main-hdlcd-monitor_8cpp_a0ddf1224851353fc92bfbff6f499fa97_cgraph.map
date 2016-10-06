@@ -1,3 +1,10 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$HdlcdPacketCtrlPrinter_8h.html#aaec1fdfdc55acf1ea029d733eed20355" title="HdlcdPacketCtrlPrinter" alt="" coords="105,5,271,32"/>
+<area shape="rect" id="node2" href="$classHdlcdClient.html#aca11bffddc34e66a67d7e738e9e8d6b3" title="Provide a callback method to be called if this client entity is closing. " alt="" coords="121,5,305,47"/>
+<area shape="rect" id="node3" href="$classHdlcdClient.html#a720df5b80af119a88da1ed201b32b46e" title="Provide a callback method to be called for received control packets. " alt="" coords="105,71,320,98"/>
+<area shape="rect" id="node4" href="$HdlcdPacketCtrlPrinter_8h.html#aaec1fdfdc55acf1ea029d733eed20355" title="HdlcdPacketCtrlPrinter" alt="" coords="130,122,295,149"/>
+<area shape="rect" id="node9" href="$classHdlcdClient.html#a485e29db5cb483d9c0ac45febd963bbf" title="Perform an asynchronous connect procedure regarding both TCP sockets. " alt="" coords="117,173,308,199"/>
+<area shape="rect" id="node5" href="$classHdlcdPacketCtrl.html#a8f4d35576f4ed5163ef49f8eb5f4d37d" title="HdlcdPacketCtrl::GetPacketType" alt="" coords="368,42,595,69"/>
+<area shape="rect" id="node6" href="$classHdlcdPacketCtrl.html#a12fc2b37905df9cbcaa84a9bee84fc1a" title="HdlcdPacketCtrl::GetIsAlive" alt="" coords="385,93,578,119"/>
+<area shape="rect" id="node7" href="$classHdlcdPacketCtrl.html#a00bca303fa168370388c078edd041e60" title="HdlcdPacketCtrl::GetIsLocked\lBySelf" alt="" coords="377,144,586,185"/>
+<area shape="rect" id="node8" href="$classHdlcdPacketCtrl.html#a128533b3f7e1d3d9386055171b227e80" title="HdlcdPacketCtrl::GetIsLocked\lByOthers" alt="" coords="377,209,586,251"/>
 </map>

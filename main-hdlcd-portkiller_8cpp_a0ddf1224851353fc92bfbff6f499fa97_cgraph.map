@@ -1,0 +1,6 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$classHdlcdClient.html#aca11bffddc34e66a67d7e738e9e8d6b3" title="Provide a callback method to be called if this client entity is closing. " alt="" coords="113,5,297,47"/>
+<area shape="rect" id="node3" href="$classHdlcdClient.html#a485e29db5cb483d9c0ac45febd963bbf" title="Perform an asynchronous connect procedure regarding both TCP sockets. " alt="" coords="109,71,300,98"/>
+<area shape="rect" id="node4" href="$classHdlcdClient.html#ab7fdcd25b70b9a707ef63bc697078e82" title="Send a single data packet to the peer entity. " alt="" coords="138,122,271,149"/>
+<area shape="rect" id="node5" href="$classHdlcdPacketCtrl.html#ae1c89b7c21ab26d485a75bed48355014" title="HdlcdPacketCtrl::CreatePort\lKillRequest" alt="" coords="105,173,304,215"/>
+</map>
