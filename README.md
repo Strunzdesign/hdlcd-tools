@@ -8,17 +8,17 @@ This package offers additional tools to be used together with the "HDLC Daemon" 
 This software is intended to be portable and makes use of the boost libraries. It was tested on GNU/Linux (GCC toolchain)
 and Microsoft Windows (nuwen MinGW).
 
-Before being able to compile the tools of this repository, you have to install the shared header files from this repository:
-- https://github.com/Strunzdesign/hdlcd-devel
-
 Stable releases of the HDLCd-Tools:
+- v1.1 from 06.10.2016
+  - Multiple bug fixes and stability improvements
+  - Makes use of git submodules for "externals"
+
 - v1.0 from 23.08.2016
   - First tested version without any open issues
   - Works well with s-net(r) BASE release 3.6
 
 Current state:
-- v1.1pre (git master branch)
-  - Requires the header files from https://github.com/Strunzdesign/hdlcd-devel for compilation!
+- v1.2pre (git master branch)
 
 Required libraries and tools:
 - GCC, the only tested compiler collection thus far (tested: GCC 4.9.3, GCC 6.1)

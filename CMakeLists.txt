@@ -19,7 +19,7 @@ set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wall -Wextra")
 
 # Automatically set the version number
 set(HDLCD_TOOLS_VERSION_MAJOR \"1\")
-set(HDLCD_TOOLS_VERSION_MINOR \"1pre\")
+set(HDLCD_TOOLS_VERSION_MINOR \"1\")
 include_directories(
     "${PROJECT_BINARY_DIR}/src"
     "${PROJECT_SOURCE_DIR}/libs/framing/src"
