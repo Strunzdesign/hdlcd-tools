@@ -2,7 +2,7 @@
 How to install the additional tools for the HDLC Daemon
 ===
 
-For GNU/Linux:
+Initial download and setup on GNU/Linux:
 ---
 Preparations:
 - Install the "GCC toolchain"
@@ -10,7 +10,7 @@ Preparations:
 - Install the "CMake" build system
 
 To compile the HDLC daemon tools, just follow these steps:
-1.) git clone https://github.com/Strunzdesign/hdlcd-tools.git
+1.) git clone --recursive https://github.com/Strunzdesign/hdlcd-tools.git
 2.) cd hdlcd-tools
 3.) mkdir build
 4.) cd build
@@ -22,7 +22,7 @@ All binaries will be installed to "/usr/local/bin/".
 
 
 
-For Microsoft Windows 7:
+Initial download and setup on Microsoft Windows 7:
 ---
 Preparations:
 - Download the latest "nuwen MinGW" distribution from https://nuwen.net/mingw.html
@@ -33,7 +33,7 @@ Preparations:
 
 To compile and install the HDLC daemon tools, just follow these steps:
 1.) Go to your projects' folder and open a shell there
-2.) git clone https://github.com/Strunzdesign/hdlcd-tools.git
+2.) git clone --recursive https://github.com/Strunzdesign/hdlcd-tools.git
 3.) cd hdlcd-tools
 4.) mkdir build
 5.) cd build
@@ -44,5 +44,16 @@ To compile and install the HDLC daemon tools, just follow these steps:
 10.) make install
 
 The "hdlcd-tools" binaries will be installed to "C:\hdlcd-tools\bin\" if not specified differently.
+
+
+
+Update and reompile your local repository (same for all OS):
+---
+1.) cd snet-devel
+2.) git pull
+3.) git submodule update
+4.) cd build
+5.) make
+6.) make install
 
 Have fun :-)
